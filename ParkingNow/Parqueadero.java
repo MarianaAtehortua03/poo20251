@@ -50,4 +50,19 @@ public class Parqueadero {
         return false;
     }
 
+    //mostrar disponibilidad de puestos
+    public void mostrarDisponibilidad() {
+        System.out.println("Bajo Cilindraje:");
+        mostrarMatriz(bajoCilindraje);
+        System.out.println("\nAlto Cilindraje:");
+        mostrarMatriz(altoCilindraje);
+    }
+
+    private void mostrarMatriz(Moto[] parqueo) {
+        for (int i = 0; i < parqueo.length; i++) {
+            System.out.print((parqueo[i] == null ? "0 " : "1 "));
+            if ((i + 1) % 5 == 0) System.out.println();
+        }
+    }
+
 }

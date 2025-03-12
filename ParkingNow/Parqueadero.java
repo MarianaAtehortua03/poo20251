@@ -37,4 +37,17 @@ public class Parqueadero {
         }
     }
 
+    //metodo para asignar un puesto
+    private boolean asignarPuesto(Moto moto, Moto[] parqueo) {
+        System.out.print("Ingrese el numero de puesto (1-" + parqueo.length + "): ");
+        int puesto = scanner.nextInt() - 1;
+
+        if (puesto >= 0 && puesto < parqueo.length && parqueo[puesto] == null) {
+            parqueo[puesto] = moto;
+            System.out.println("Moto registrada en el puesto " + (puesto + 1));
+            return true;
+        }
+        return false;
+    }
+
 }

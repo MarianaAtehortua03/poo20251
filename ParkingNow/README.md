@@ -8,3 +8,5 @@ Moto.java = define la clase Moto con su tipo (bajo o alto cilindraje)
 ParkingNow.java = Contiene el main() y el menu principal del programa
 Parqueadero.java = administra el parqueadero y sus funciones
 README.md = archivo con la descripción del proyecto
+
+java ParkingNow.ParkingNow //comando para ejecutar el programa

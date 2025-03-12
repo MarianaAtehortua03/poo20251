@@ -21,7 +21,15 @@ public class Parqueadero {
         Moto nuevaMoto = new Moto(cilindraje);
         boolean registrado = false;
         
-        // 
+        if (cilindraje < 400) {
+            registrado = asignarPuesto(nuevaMoto, bajoCilindraje);
+        } else {
+            registrado = asignarPuesto(nuevaMoto, altoCilindraje);
+        }
+
+        if (!registrado) {
+            System.out.println("Puesto no disponible o fuera de rango.");
+        }
     }
 
 }

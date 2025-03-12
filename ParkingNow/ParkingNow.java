@@ -17,6 +17,23 @@ public class ParkingNow {
             System.out.print("Seleccione una opcion: ");
             opcion = scanner.nextInt();
 
+            switch (opcion) {
+                case 1:
+                    parqueadero.registrarMoto();
+                    break;
+                case 2:
+                    parqueadero.cobrarMoto();
+                    break;
+                case 3:
+                    parqueadero.mostrarDisponibilidad();
+                    break;
+                case 4:
+                    System.out.println("Saliendo del sistema...");
+                    break;
+                default:
+                    System.out.println("opcion no valida");
+            }
+
         } while (opcion != 4);
         
         scanner.close();

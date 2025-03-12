@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Parqueo {
+public class pmoto {
     //arreglos que representan los puestos del parqueadero
     // 0 = vacío, 1 = ocupado
     static int[] parqueaderoBajo = new int[20];

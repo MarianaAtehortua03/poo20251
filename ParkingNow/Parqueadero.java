@@ -13,22 +13,27 @@ public class Parqueadero {
         scanner = new Scanner(System.in);
     }
 
-    // Metodo para registrar moto en un puesto
+    // metodo para registrar moto en un puesto
     public void registrarMoto() {
-        System.out.print("Ingrese el cilindraje de la moto: ");
-        int cilindraje = scanner.nextInt();
-        
-        Moto nuevaMoto = new Moto(cilindraje);
+        System.out.println("Seleccione tipo de moto:");
+        System.out.println("1. Moto de bajo cilindraje (≤ 400cc)");
+        System.out.println("2. Moto de alto cilindraje (> 400cc)");
+        int tipo = scanner.nextInt();
+
+        Moto nuevaMoto = new Moto(tipo); //se crea la moto con tipo 1 o 2
         boolean registrado = false;
-        
-        if (cilindraje < 400) {
+
+        if (tipo == 1) {
             registrado = asignarPuesto(nuevaMoto, bajoCilindraje);
-        } else {
+        } else if (tipo == 2) {
             registrado = asignarPuesto(nuevaMoto, altoCilindraje);
+        } else {
+            System.out.println("Opcion no valida");
+            return;
         }
 
         if (!registrado) {
-            System.out.println("Puesto no disponible o fuera de rango.");
+            System.out.println("Puesto no disponible o fuera de rango");
         }
     }
 

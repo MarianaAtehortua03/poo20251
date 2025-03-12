@@ -15,7 +15,13 @@ public class Parqueadero {
 
     // Metodo para registrar moto en un puesto
     public void registrarMoto() {
-       //
+        System.out.print("Ingrese el cilindraje de la moto: ");
+        int cilindraje = scanner.nextInt();
+        
+        Moto nuevaMoto = new Moto(cilindraje);
+        boolean registrado = false;
+        
+        // 
     }
 
 }

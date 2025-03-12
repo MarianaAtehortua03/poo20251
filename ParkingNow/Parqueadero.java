@@ -8,6 +8,8 @@ public class Parqueadero {
     private Scanner scanner;
 
     public Parqueadero() {
-        // 
+        bajoCilindraje = new Moto[20];
+        altoCilindraje = new Moto[10];
+        scanner = new Scanner(System.in);
     }
 }

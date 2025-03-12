@@ -12,4 +12,10 @@ public class Parqueadero {
         altoCilindraje = new Moto[10];
         scanner = new Scanner(System.in);
     }
+
+    // Metodo para registrar moto en un puesto
+    public void registrarMoto() {
+       //
+    }
+
 }

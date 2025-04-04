@@ -1,0 +1,11 @@
+package Clase9;
+
+public class Camara extends Producto {
+
+    //Atributos
+    private String marca;
+    private String modelo;
+ 
+    //Metodos
+    
+}

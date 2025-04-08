@@ -1,19 +1,17 @@
 package Clase9;
 
+// Impresion también hereda de Producto
 public class Impresion extends Producto {
 
-    // Atributos
     private String color;
-    private Foto[] fotos; // Arreglo de fotos
+    private Foto[] fotos; // Composición: Impresion contiene fotos
 
-    // Constructor
     public Impresion(int numero, String color, Foto[] fotos) {
         super(numero);
         this.color = color;
         this.fotos = fotos;
     }
 
-    // Métodos
     public String getColor() {
         return color;
     }
@@ -22,8 +20,9 @@ public class Impresion extends Producto {
         return fotos;
     }
 
-    public String toString() {
-        return "Impresion { Color: " + color + ", Número Producto: " + super.getNumero() + " }";
+    // También redefine el comportamiento del método en Producto (Polimorfismo)
+    public String getDescripcion() {
+        return "Impresión a " + color + " con " + fotos.length + " foto(s) (N° " + getNumero() + ")";
     }
 }
 

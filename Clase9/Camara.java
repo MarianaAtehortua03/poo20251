@@ -1,21 +1,20 @@
 package Clase9;
 
+// Camara hereda de Producto (Herencia)
 public class Camara extends Producto {
 
-    //Atributos
     private String marca;
     private String modelo;
 
     public Camara(int numero, String marca, String modelo) {
-        super(numero);
+        super(numero); // Llamamos al constructor de Producto
         this.marca = marca;
         this.modelo = modelo;
     }
 
-    public String toString() {
-        return "Cámara { Número: " + getNumero() +
-                ", Marca: " + marca +
-                ", Modelo: " + modelo + " }";
+    // Este método redefine el comportamiento del método en Producto (Polimorfismo)
+    public String getDescripcion() {
+        return "Cámara: " + marca + " " + modelo + " (N° " + getNumero() + ")";
     }
-    
 }
+

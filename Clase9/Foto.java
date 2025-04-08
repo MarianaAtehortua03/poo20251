@@ -1,15 +1,15 @@
 package Clase9;
 
+// Clase simple para representar una foto
 public class Foto {
 
-    //Atributos
     private String fichero;
 
-    //Metodos
     public Foto(String fichero) {
         this.fichero = fichero;
     }
 
+    // Este método muestra el contenido, puede ser usado por Impresion
     public void print() {
         System.out.println("Mostrando foto: " + fichero);
     }

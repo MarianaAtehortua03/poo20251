@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Ejecutar {
     public static void main(String[] args) {
+
         // Crear cliente
         Cliente cliente = new Cliente("123456789", "Laura Gómez");
 
@@ -12,21 +13,18 @@ public class Ejecutar {
         Foto foto2 = new Foto("cumpleaños2.jpg");
         Foto[] fotos = { foto1, foto2 };
 
-        // Crear productos
+        // Crear productos (herencia y polimorfismo)
         Camara camara = new Camara(1, "Canon", "EOS 2000D");
         Impresion impresion = new Impresion(2, "Color", fotos);
         Producto[] productos = { camara, impresion };
 
-        // Crear pedido
+        // Crear pedido (agregación)
         Pedido pedido = new Pedido(cliente, productos, new Date(), 12345678);
 
-        // Imprimir todo
-        System.out.println(cliente);
-        System.out.println(camara);
-        System.out.println(impresion);
+        // Mostrar detalles del pedido
         System.out.println(pedido);
 
-        // Mostrar fotos con método print()
+        // Mostrar cada foto (composición)
         for (Foto f : fotos) {
             f.print();
         }

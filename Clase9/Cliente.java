@@ -1,8 +1,8 @@
 package Clase9;
 
+// Clase básica con datos del cliente
 public class Cliente {
-    
-    //Atributos
+
     private String cedula;
     private String nombre;
 
@@ -14,5 +14,5 @@ public class Cliente {
     public String toString() {
         return "Cliente { Cédula: " + cedula + ", Nombre: " + nombre + " }";
     }
-
 }
+

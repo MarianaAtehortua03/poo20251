@@ -1,15 +1,15 @@
 package Clase9;
+
 import java.util.Date;
 
+// Clase que relaciona Cliente con Productos: Ejemplo de Agregación
 public class Pedido {
 
-    // Atributos
     private Cliente cliente;
     private Producto[] productos;
     private Date fecha;
     private int numeroTarjetaCredito;
 
-    // Constructor
     public Pedido(Cliente cliente, Producto[] productos, Date fecha, int numeroTarjetaCredito) {
         this.cliente = cliente;
         this.productos = productos;
@@ -17,7 +17,6 @@ public class Pedido {
         this.numeroTarjetaCredito = numeroTarjetaCredito;
     }
 
-    // Métodos
     public Cliente getCliente() {
         return cliente;
     }
@@ -35,10 +34,13 @@ public class Pedido {
     }
 
     public String toString() {
-        return "Pedido { Cliente: " + cliente +
-                ", Fecha: " + fecha +
-                ", Número Tarjeta: " + numeroTarjetaCredito + " }";
+        String resumen = "Pedido de: " + cliente + "\nFecha: " + fecha + "\nProductos:\n";
+        for (Producto p : productos) {
+            resumen += "- " + p.getDescripcion() + "\n";
+        }
+        return resumen;
     }
 }
+
 
 

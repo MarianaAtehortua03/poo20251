@@ -1,6 +1,5 @@
 package Clase9;
 
-// Clase básica con datos del cliente
 public class Cliente {
 
     private String cedula;

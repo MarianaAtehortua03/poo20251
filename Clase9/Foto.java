@@ -1,6 +1,5 @@
 package Clase9;
 
-// Clase simple para representar una foto
 public class Foto {
 
     private String fichero;
@@ -9,7 +8,6 @@ public class Foto {
         this.fichero = fichero;
     }
 
-    // Este método muestra el contenido, puede ser usado por Impresion
     public void print() {
         System.out.println("Mostrando foto: " + fichero);
     }

@@ -2,7 +2,7 @@ package Clase9;
 
 import java.util.Date;
 
-// Clase que relaciona Cliente con Productos: Ejemplo de Agregación
+// Clase que relaciona Cliente con Productos: Ejemplo de Agregacion
 public class Pedido {
 
     private Cliente cliente;

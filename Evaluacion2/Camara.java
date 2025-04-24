@@ -3,6 +3,7 @@ package Evaluacion2;
 // Camara hereda de Producto (Herencia)
 public class Camara extends Producto {
 
+    // Encapsulamiento
     private String marca;
     private String modelo;
 
@@ -12,7 +13,8 @@ public class Camara extends Producto {
         this.modelo = modelo;
     }
 
-    // Este método redefine el comportamiento del método en Producto (Polimorfismo)
+    // Polimorfismo: sobrescribe getDescripcion()
+    @Override
     public String getDescripcion() {
         return "Cámara: " + marca + " " + modelo + " (N° " + getNumero() + ")";
     }

@@ -3,6 +3,7 @@ package Evaluacion2;
 // Clase base que representa un producto general
 public class Producto {
 
+    // Encapsulamiento: atributos privados con acceso controlado mediante métodos publicos
     private int numero; 
 
     public Producto(int numero) {
@@ -22,6 +23,7 @@ public class Producto {
         this.numero = numero;
     }
 
+    @Override
     public String toString() {
         return getDescripcion();
     }

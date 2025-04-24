@@ -3,6 +3,7 @@ package Evaluacion2;
 // Impresion también hereda de Producto
 public class Impresion extends Producto {
 
+    // Encapsulamiento
     private String color;
     private Foto[] fotos; // Composición: Impresion contiene fotos
 
@@ -17,10 +18,10 @@ public class Impresion extends Producto {
     }
 
     public Foto[] getFotos() {
-        return fotos;
+        return fotos != null ? fotos.clone() : new Foto[0];
     }
 
-    // También redefine el comportamiento del método en Producto (Polimorfismo)
+    @Override
     public String getDescripcion() {
         return "Impresión a " + color + " con " + (fotos != null ? fotos.length : 0) + " foto(s) (N° " + getNumero() + ")";
     }

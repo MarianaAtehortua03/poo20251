@@ -18,3 +18,13 @@ Conceptos
 Para este proyecto decidimos usar arreglos, ya que es lo que hemos trabajado en clase y cumple bien con lo que necesitamos: almacenar una cantidad fija de productos y fotos.
 
 Sin embargo si el sistema creciera o si necesitara que los usuarios agregaran productos o fotos dinámicamente (sin saber cuántos exactamente desde el inicio) entonces sería más conveniente usar ArrayList. ArrayList permite agregar o quitar elementos fácilmente y tiene métodos útiles que facilitan el trabajo, pero también introduce más complejidad.
+
+Mejoras implementadas
+
+Encapsulamiento: Todos los atributos de las clases se mantienen "private". Se añadieron métodos "getters" y "setters" donde fue necesario.
+
+Validaciones básicas: Se implementaron validaciones en los constructores, por ejemplo: El "Cliente" no puede tener una cédula o nombre vacío y la "Foto" no se puede crear con un nombre de archivo vacío o nulo.
+
+Métodos utiles adicionales
+Se agregó el método "mostrarFotos()" en la clase "Impresion", que imprime todas las fotos asociadas.
+El método "toString()" de la clase "Pedido" ahora utiliza "SimpleDateFormat" para mostrar la fecha en formato legible.

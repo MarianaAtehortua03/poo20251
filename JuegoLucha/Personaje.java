@@ -1,22 +1,30 @@
+// Clase abstracta que define las características comunes de todos los personajes del juego
 public abstract class Personaje {
+    // Nombre del personaje
     protected String nombre;
+
+    // Puntos de vida actuales del personaje
     protected int puntosDeVida;
+
+    // Arma asociada al personaje (composición)
     protected Arma arma;
 
-    // Constructor base para cualquier personaje
+    // Constructor que inicializa nombre, puntos de vida y arma
     public Personaje(String nombre, int puntosDeVida, Arma arma) {
         this.nombre = nombre;
         this.puntosDeVida = puntosDeVida;
         this.arma = arma;
     }
 
-    // Cada tipo de personaje tendrá su propia forma de atacar
+    // Método abstracto que será implementado por las subclases (ataque personalizado)
     public abstract void atacar(Personaje oponente);
 
-    // Reduce la vida del personaje cuando recibe daño
+    // Método para recibir daño, restando puntos de vida
     public void recibirDano(int cantidad) {
         puntosDeVida -= cantidad;
-        System.out.println(nombre + " recibe " + cantidad + " puntos de daño. Vida actual: " + puntosDeVida);
+        if (puntosDeVida < 0) {
+            puntosDeVida = 0; // Evita que los puntos de vida sean negativos
+        }
     }
 
     // Verifica si el personaje sigue con vida
@@ -24,12 +32,13 @@ public abstract class Personaje {
         return puntosDeVida > 0;
     }
 
+    // Devuelve el nombre del personaje
     public String getNombre() {
         return nombre;
     }
 
+    // Devuelve los puntos de vida actuales del personaje
     public int getPuntosDeVida() {
         return puntosDeVida;
     }
 }
-

@@ -1,41 +1,65 @@
-Descripción
+Juego de Lucha en Java
 
-Este proyecto implementa un juego de lucha por turnos en Java, utilizando los principios fundamentales de la Programación Orientada a Objetos (POO): encapsulamiento, herencia, polimorfismo, composición y agregación.
+Descripción General: Este proyecto implementa un juego de lucha por turnos en Java, aplicando los principios fundamentales de la Programación Orientada a Objetos (POO): encapsulamiento, herencia, polimorfismo, composición y agregación.
 
-El juego enfrenta a dos personajes: un Cazador y un Hechicero, cada uno con atributos y ataques distintos. Los personajes se alternan turnos para atacarse, hasta que uno pierde todos sus puntos de vida. El juego se ejecuta en consola y permite al usuario ingresar los nombres de los personajes y controlar el ataque por turnos.
+El juego enfrenta a dos personajes: un Cazador y un Hechicero, cada uno con un arma propia y ataques con rangos de daño diferentes. Los personajes se alternan para atacarse hasta que uno de ellos pierde todos sus puntos de vida. El juego se ejecuta completamente por consola y permite ingresar los nombres de los personajes, viendo el desarrollo del combate paso a paso.
+
+Descripción de la solución
+Para abordar este ejercicio, diseñé una estructura basada en clases que me permitiera reutilizar código, separar responsabilidades y aplicar los principios de la POO de manera clara. El proceso fue:
+
+Diseñar una clase abstracta Personaje con los atributos comunes: nombre, puntos de vida y arma. Esta clase define el método atacar() como abstracto para que las subclases implementen su propio comportamiento.
+
+Crear las subclases Cazador y Hechicero que heredan de Personaje, con su lógica de ataque diferenciada. El Cazador tiene un rango de daño entre 15 y 25, mientras que el Hechicero tiene un rango de daño entre 10 y 20.
+
+Aplicar encapsulamiento, haciendo que los atributos clave sean privados o protegidos y controlando el acceso a través de métodos públicos donde es necesario (por ejemplo, getters para el nombre o verificación de si el personaje sigue con vida).
+
+Usar composición, ya que cada personaje tiene un objeto Arma que modifica su ataque.
+
+Usar agregación, permitiendo que los objetos Arma sean creados externamente y luego asociados a un personaje, manteniéndose independientes.
+
+Desarrollar la clase JuegoLucha, que controla el flujo del combate con estructuras while para los turnos y if para controlar las condiciones de victoria.
 
 Análisis previo
-La idea central era representar una batalla sencilla en consola, con las siguientes condiciones:
+Al plantear la solución, identifiqué las siguientes condiciones:
+
+El combate debía ser por turnos, permitiendo alternancia entre los personajes.
 
 Cada personaje tiene un nombre, puntos de vida y un arma.
-Cada clase hija (Cazador, Hechicero) implementa su propio método atacar, con distintos niveles de daño.
-Se creó una clase JuegoLucha que controla el flujo del juego.
-El combate se repite en turnos hasta que uno de los dos jugadores pierda toda su vida.
 
-Se usaron:
+Las subclases deberían tener su propio comportamiento de ataque.
 
-Clases y herencia: para representar personajes y sus comportamientos.
-Ciclos while: para mantener la pelea mientras ambos estén vivos.
-Condicionales if: para verificar opciones del jugador y determinar al ganador.
+El juego debe terminar cuando uno de los dos quede sin puntos de vida.
 
-Principios POO Aplicados
-Encapsulamiento: Los atributos de las clases están protegidos y se accede a ellos mediante métodos públicos (getters). Esto protege el estado interno de los objetos.
+Estructura del proyecto
+Arma: Clase simple con nombre y daño adicional.
 
-Herencia: La clase Personaje es abstracta y define la estructura común para los personajes del juego. Cazador y Hechicero heredan de esta clase y personalizan el comportamiento del método atacar.
+Personaje (abstracta): Contiene atributos y comportamientos comunes a todos los personajes.
 
-Polimorfismo: El método atacar está declarado en la superclase como abstracto y es implementado de forma diferente en Cazador y Hechicero. Así al llamar atacar desde un objeto de tipo Personaje, se ejecuta la versión correspondiente según el tipo real del objeto.
+Cazador: Personaje con más vida base y ataque físico entre 15 y 25 puntos.
 
-Composición: Cada personaje tiene un arma, representada por un objeto de la clase Arma, que se le asigna en el constructor. El arma afecta el daño causado en el ataque.
+Hechicero: Personaje con menos vida pero ataque mágico entre 10 y 20 puntos.
 
-Agregación: Las armas son creadas fuera de los personajes y luego asociadas a ellos. La relación entre Personaje y Arma no implica dependencia estricta (pueden existir por separado).
+JuegoLucha: Clase principal que maneja la ejecución del combate, lectura de datos y turnos.
 
-Estructura General del Código
+Principios de POO aplicados
+Encapsulamiento: Los atributos están protegidos y no se accede directamente a ellos desde fuera.
 
-Arma: clase que representa un arma con nombre y daño adicional.
-Personaje: clase abstracta base que define los atributos y métodos comunes a todos los personajes.
-Cazador: personaje con mayor vida base y ataque físico con daño aleatorio.
-Hechicero: personaje con menos vida pero ataque mágico con daño aleatorio.
-JuegoLucha: clase principal que ejecuta el juego, pide entrada del usuario, alterna turnos y determina al ganador.
+Herencia: Cazador y Hechicero extienden de Personaje.
+
+Polimorfismo: El método atacar() es implementado de forma distinta según el tipo de personaje.
+
+Composición: Personaje contiene un objeto Arma que modifica el daño causado.
+
+Agregación: El arma se asocia al personaje pero puede existir por separado.
 
 Ejecución
-El usuario debe ejecutar la clase JuegoLucha, ingresar los nombres de los personajes, y observar cómo se desarrolla la batalla turno a turno hasta que uno de ellos quede sin vida.
+Para ejecutar el juego:
+
+Corre la clase JuegoLucha.
+
+Ingresa los nombres para el Cazador y el Hechicero.
+
+Observa cómo se desarrolla el combate, turno por turno.
+
+El juego termina cuando uno de los personajes pierde toda su vida y se anuncia al ganador.
+

@@ -1,18 +1,30 @@
 import java.util.Random;
 
+// Clase que representa un personaje tipo Cazador
 public class Cazador extends Personaje {
 
-    // El Cazador comienza con 100 puntos de vida
+    // Constructor que inicializa el nombre y el arma, y asigna 120 puntos de vida
     public Cazador(String nombre, Arma arma) {
-        super(nombre, 100, arma);
+        super(nombre, 120, arma); // Llama al constructor de la superclase Personaje
     }
 
-    // El ataque del Cazador es fisico y con un poco de daño aleatorio
+    // Implementación del ataque para el Cazador
     @Override
     public void atacar(Personaje oponente) {
-        Random random = new Random();
-        int dano = 10 + random.nextInt(6) + arma.getDanoExtra(); // entre 10 y 15 + arma
-        System.out.println(nombre + " lanza un ataque físico causando " + dano + " puntos de daño.");
-        oponente.recibirDano(dano);
+        Random rand = new Random();
+
+        // Genera un número aleatorio entre 15 y 25 como ataque base
+        int ataqueBase = rand.nextInt(11) + 15;
+
+        // Suma el daño extra del arma al ataque base
+        int totalAtaque = ataqueBase + arma.getDanoExtra();
+
+        // Imprime el ataque realizado
+        System.out.println(nombre + " ataca con fuerza y causa " + totalAtaque + " puntos.");
+
+        // Aplica el daño al oponente
+        oponente.recibirDano(totalAtaque);
     }
 }
+
+
